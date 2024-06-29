@@ -11,8 +11,16 @@ generation_config_path = 'model/generation_config.json'
 
 model = MarianMTModel.from_pretrained(model_path)
 tokenizer = MarianTokenizer.from_pretrained(tokenizer_path)
-generation_config = GenerationConfig.from_pretrained(generation_config_path)
+#generation_config = GenerationConfig.from_pretrained(generation_config_path)
 
+
+# generation configuration
+generation_config = GenerationConfig(
+    max_length=512,
+    num_beams=6,
+    bad_words_ids=[[60715]],
+    forced_eos_token_id=0
+)
 
 st.title('Japanese to English Translator')
 st.write('Enter a sentence.')
