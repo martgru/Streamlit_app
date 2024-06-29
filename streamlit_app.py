@@ -19,7 +19,9 @@ generation_config = GenerationConfig(
     max_length=512,
     num_beams=6,
     bad_words_ids=[[60715]],
-    forced_eos_token_id=0
+    forced_eos_token_id=0,
+    decoder_start_token_id=tokenizer.pad_token_id,
+    bos_token_id=tokenizer.bos_token_id 
 )
 
 st.title('Japanese to English Translator')
