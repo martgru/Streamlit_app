@@ -6,9 +6,9 @@ import torch
 
 @st.cache(allow_output_mutation=True)
 def load_model():
-    model_path = os.path.join('data','model')
-    tokenizer_path = os.path.join('data','model','tokenizer')
-    generation_config_path = os.path.join('data','model','generation_config.json')
+    model_path = os.path.join('model')
+    tokenizer_path = os.path.join('model','tokenizer')
+    generation_config_path = os.path.join('model','generation_config.json')
 
     model = MarianMTModel.from_pretrained(model_path)
     tokenizer = MarianTokenizer.from_pretrained(tokenizer_path)
