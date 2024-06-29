@@ -1,1 +1,1 @@
-# Streamlit_app
+# Japanese to English translation app
