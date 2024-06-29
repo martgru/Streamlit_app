@@ -4,19 +4,15 @@ import streamlit as st
 from transformers import MarianMTModel, MarianTokenizer, GenerationConfig
 import torch
 
-@st.cache(allow_output_mutation=True)
-def load_model():
-    model_path = 'model/'
-    tokenizer_path = 'model/tokenizer/'
-    generation_config_path = 'model/generation_config.json'
 
-    model = MarianMTModel.from_pretrained(model_path)
-    tokenizer = MarianTokenizer.from_pretrained(tokenizer_path)
-    generation_config = GenerationConfig.from_pretrained(generation_config_path)
+model_path = 'model/'
+tokenizer_path = 'model/tokenizer/'
+generation_config_path = 'model/generation_config.json'
 
-    return model, tokenizer, generation_config
+model = MarianMTModel.from_pretrained(model_path)
+tokenizer = MarianTokenizer.from_pretrained(tokenizer_path)
+generation_config = GenerationConfig.from_pretrained(generation_config_path)
 
-model, tokenizer, generation_config = load_model()
 
 st.title('Japanese to English Translator')
 st.write('Enter a sentence.')
